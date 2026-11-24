@@ -44,7 +44,13 @@ MAX_CHARS = 200
 
 def check_entry(text):
     """Refuse to write anything that breaks the gate: one sentence,
-    1-200 characters, no post-1800 words."""
+    1-200 characters, no post-1800 words.
+
+    Gate note (v2): the tournament was re-run fresh for v2 against
+    v1's winner C6 and the NOTES candidates C11/C12/C3 plus two new
+    variants; the "one road" wording above won on the brief's fifth
+    criterion (single memorable image) with "your letters" kept.
+    """
     if not 1 <= len(text) <= MAX_CHARS:
         raise ValueError("entry must be 1-%d chars, got %d" % (MAX_CHARS, len(text)))
     if text.count(".") != 1 or not text.endswith("."):
