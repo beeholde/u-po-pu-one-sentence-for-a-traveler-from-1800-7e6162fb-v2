@@ -74,6 +74,9 @@ def run():
         os.makedirs(folder, exist_ok=True)
     with open(dest, "w", encoding="utf-8") as handle:
         handle.write(ENTRY)
+    # The grader reads as another user: the entry file must be
+    # world-readable. chmod the FILE only, never the /output directory.
+    os.chmod(dest, 0o644)
 
 
 if __name__ == "__main__":
